@@ -493,7 +493,18 @@ window.onload = function() {
 		preload:function(){
 			game.load.image("bird", "start.png");
 			game.load.image("space", "snakes.jpg");	 
-			game.load.image("fullscreen", "fullscreen.png");	 
+			game.load.image("fullscreen", "fullscreen.png");	
+			game.load.image("bird", "newship.png");
+			game.load.spritesheet("snakes", "snakes.png", 30, 30);
+			game.load.spritesheet("snakes2", "snakes2.png", 30, 30);
+			game.load.spritesheet("slash", "slice.png", 128, 128, 16);
+			
+			game.load.image("space", "background.png");	 
+			game.load.image("pipe", "pipe.png");
+			game.load.json("bassline", "example.json");	
+			game.load.json("accompaniment", "accompaniment.json");
+			game.load.json("melody", "melody.json");
+			game.load.audio('theme', "theme.mp3"); 
 		},
 
 		create:function(){
