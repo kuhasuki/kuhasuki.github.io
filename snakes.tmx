@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="5" tilewidth="30" tileheight="30" nextobjectid="1">
+ <tileset firstgid="1" name="snakes" tilewidth="30" tileheight="30" tilecount="10" columns="10">
+  <image source="snakes.png" width="300" height="30"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="5">
+  <data encoding="csv">
+1,2,2,2,6,0,1,2,2,6,
+1,2,2,2,2,6,0,1,2,6,
+1,2,2,2,2,2,6,0,1,6,
+1,2,2,2,2,2,2,6,0,0,
+1,2,2,2,2,2,2,2,6,0
+</data>
+ </layer>
+</map>
