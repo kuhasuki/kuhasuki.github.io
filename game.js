@@ -496,6 +496,10 @@ window.onload = function() {
 
   preload: function () {
     this.load.image('loadingBar', 'bar.jpg');
+    loadingText = game.add.text(10,10,"LOADING",{
+				font:"bold 16px Arial",
+				fill:"#FFFFFF"
+			});
   },
 
   create: function () {
