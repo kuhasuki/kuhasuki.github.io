@@ -518,6 +518,7 @@ window.onload = function() {
 		},
 
 		update:function(){
+			console.log(game.load.progress);
 			//slash.y = game.input.y
 		},
 
