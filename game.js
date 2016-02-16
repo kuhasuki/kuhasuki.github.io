@@ -514,6 +514,10 @@ window.onload = function() {
   menu.prototype = {
 		preload:function(){
 			//game.load.image("why", "pipe.png");
+			loadingText = game.add.text(10,10,"LOADING",{
+				font:"bold 16px Arial",
+				fill:"#FFFFFF"
+			});
 			this.loadingBar = this.add.sprite(0, 100, "loadingBar");
     	this.load.setPreloadSprite(this.loadingBar);
 
