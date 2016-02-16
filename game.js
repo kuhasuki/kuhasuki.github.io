@@ -496,10 +496,10 @@ window.onload = function() {
 
   preload: function () {
     this.load.image('loadingBar', 'bar.jpg');
-    loadingText = game.add.text(10,10,"LOADING",{
-				font:"bold 16px Arial",
-				fill:"#FFFFFF"
-			});
+   //  loadingText = game.add.text(10,10,"LOADING",{
+			// 	font:"bold 16px Arial",
+			// 	fill:"#FFFFFF"
+			// });
   },
 
   create: function () {
@@ -518,9 +518,11 @@ window.onload = function() {
 				font:"bold 16px Arial",
 				fill:"#FFFFFF"
 			});
-			this.loadingBar = this.add.sprite(0, 100, "loadingBar");
+
+			this.loadingBar = this.add.sprite(0, 40, "loadingBar");
     	this.load.setPreloadSprite(this.loadingBar);
 
+			game.load.audio('theme', "theme.mp3"); 
 			game.load.image("bird", "start.png");
 			game.load.image("bird", "newship.png");
 			game.load.image("fullscreen", "fullscreen.png");	
@@ -534,7 +536,6 @@ window.onload = function() {
 			game.load.json("bassline", "example.json");	
 			game.load.json("accompaniment", "accompaniment.json");
 			game.load.json("melody", "melody.json");
-			game.load.audio('theme', "theme.mp3"); 
 		},
 
 		create:function(){
