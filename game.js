@@ -43,8 +43,8 @@ window.onload = function() {
      
   play.prototype = {
 		preload:function(){
-			game.canvas.style.cursor = 'inherit';
-			document.querySelector('CANVAS').style.cursor = "none";
+			// game.canvas.style.cursor = 'inherit';
+			// document.querySelector('CANVAS').style.cursor = "none";
 			game.load.image("bird", "newship.png");
 			game.load.spritesheet("snakes", "snakes.png", 30, 30);
 			game.load.spritesheet("snakes2", "snakes2.png", 30, 30);
@@ -176,7 +176,7 @@ window.onload = function() {
 			// game.debug.inputInfo(32, 32);
 			//game.debug.body(snakeGroup.children[0]);
     	//game.debug.body(ship);
-    	document.querySelector('CANVAS').style.cursor = "none";
+    	//document.querySelector('CANVAS').style.cursor = "none";
     	//game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");   
 
 		},
