@@ -1,4 +1,5 @@
 window.onload = function() {	
+
 	var game = new Phaser.Game(960, 540, Phaser.CANVAS);
 
 	window.game = game;
@@ -42,6 +43,8 @@ window.onload = function() {
      
   play.prototype = {
 		preload:function(){
+			game.canvas.style.cursor = 'inherit';
+			document.querySelector('CANVAS').style.cursor = "none";
 			game.load.image("bird", "newship.png");
 			game.load.spritesheet("snakes", "snakes.png", 30, 30);
 			game.load.spritesheet("snakes2", "snakes2.png", 30, 30);
@@ -53,15 +56,22 @@ window.onload = function() {
 			game.load.json("accompaniment", "accompaniment.json");
 			game.load.json("melody", "melody.json");
 			game.load.audio('theme', "theme.mp3");
+			scoreText = game.add.text(10,10,"Use the mouse to move your ship, hit the snakes to get points",{
+				font:"bold 16px Arial",
+				fill:"#FFFFFF"
+			});
 		},
 
 		create:function(){
 			space = game.add.sprite(0,0,"space");
 
 			score = 0;
-			scoreText = game.add.text(10,10,"-",{
+			scoreText = game.add.text(10,10,"Use the mouse to move your ship, hit the snakes to get points",{
 				font:"bold 16px Arial",
 				fill:"#FFFFFF"
+			});
+			game.time.events.add(4000, function(){
+				scoreText.text = "";
 			});
 		
 			game.stage.backgroundColor = "#000000";
@@ -166,7 +176,8 @@ window.onload = function() {
 			// game.debug.inputInfo(32, 32);
 			//game.debug.body(snakeGroup.children[0]);
     	//game.debug.body(ship);
-    	game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");   
+    	document.querySelector('CANVAS').style.cursor = "none";
+    	//game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");   
 
 		},
 
@@ -514,7 +525,7 @@ window.onload = function() {
   menu.prototype = {
 		preload:function(){
 			//game.load.image("why", "pipe.png");
-			loadingText = game.add.text(10,10,"LOADING",{
+			loadingText = game.add.text(10,10,"LOADING... turn up your sound to fully enjoy the game!",{
 				font:"bold 16px Arial",
 				fill:"#FFFFFF"
 			});
