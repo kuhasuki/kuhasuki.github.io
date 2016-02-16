@@ -491,8 +491,9 @@ window.onload = function() {
      
   menu.prototype = {
 		preload:function(){
-			console.log(game.load.progress);
-			game.time.events.add(1000, loadStart);
+			this.loadingBar = this.add.sprite(100, 100, "newship.png");
+    	this.load.setPreloadSprite(this.loadingBar);
+
 			game.load.image("bird", "start.png");
 			game.load.image("space", "snakes.jpg");	 
 			game.load.image("fullscreen", "fullscreen.png");	
