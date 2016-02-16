@@ -495,7 +495,7 @@ window.onload = function() {
   },
 
   preload: function () {
-    this.load.image('loadingBar', 'pipe.png');
+    this.load.image('loadingBar', 'bar.jpg');
   },
 
   create: function () {
@@ -510,17 +510,17 @@ window.onload = function() {
   menu.prototype = {
 		preload:function(){
 			//game.load.image("why", "pipe.png");
-			this.loadingBar = this.add.sprite(100, 100, "loadingBar");
+			this.loadingBar = this.add.sprite(0, 100, "loadingBar");
     	this.load.setPreloadSprite(this.loadingBar);
 
 			game.load.image("bird", "start.png");
-			game.load.image("space", "snakes.jpg");	 
-			game.load.image("fullscreen", "fullscreen.png");	
 			game.load.image("bird", "newship.png");
+			game.load.image("fullscreen", "fullscreen.png");	
 			game.load.spritesheet("snakes", "snakes.png", 30, 30);
 			game.load.spritesheet("snakes2", "snakes2.png", 30, 30);
 			game.load.spritesheet("slash", "slice.png", 128, 128, 16);
 			
+			game.load.image("space", "snakes.jpg");	 
 			game.load.image("space", "background.png");	 
 			//game.load.image("pipe", "pipe.png");
 			game.load.json("bassline", "example.json");	
