@@ -509,6 +509,9 @@ window.onload = function() {
 
 		create:function(){
 			game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+			game.load.onLoadStart.add(loadStart, this);
+    	//game.load.onFileComplete.add(fileComplete, this);
+    	game.load.onLoadComplete.add(loadComplete, this);
 			space = game.add.sprite(0,0,"space");
 			button = game.add.button(game.world.centerX - 210, 420, 'bird', doThing, this, 2, 2, 2);
 			button = game.add.button(game.world.centerX + 10, 420, 'fullscreen', gofull, this, 2, 2, 2);
@@ -521,6 +524,25 @@ window.onload = function() {
 		render: function(){
 		},
 
+		loadStart: function(){
+		console.log("load started");
+	},
+	loadComplete: function(){
+		console.log("load started");
+	},
+	fileComplete: function(){
+		console.log("load started");
+	},
+
+
+	}
+
+	function loadStart(){
+		console.log("load started");
+	}
+
+	function loadComplete(){
+		console.log("load started");
 	}
      
   game.state.add("Menu",menu);
