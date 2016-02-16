@@ -491,6 +491,8 @@ window.onload = function() {
      
   menu.prototype = {
 		preload:function(){
+			console.log(game.load.progress);
+			game.time.events.add(1000, loadStart);
 			game.load.image("bird", "start.png");
 			game.load.image("space", "snakes.jpg");	 
 			game.load.image("fullscreen", "fullscreen.png");	
@@ -518,14 +520,16 @@ window.onload = function() {
 		},
 
 		update:function(){
-			console.log(game.load.progress);
+
 			//slash.y = game.input.y
 		},
 
 		render: function(){
+
 		},
 
 		loadStart: function(){
+		console.log(game.load.progress);
 		console.log("load started");
 	},
 	loadComplete: function(){
