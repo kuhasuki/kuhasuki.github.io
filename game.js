@@ -487,12 +487,30 @@ window.onload = function() {
 		//console.log("no collision");
 	}
 
+	var boot = function(game){}
+
+	boot.prototype = {
+
+  init: function () {
+  },
+
+  preload: function () {
+    this.load.image('loadingBar', 'pipe.png');
+  },
+
+  create: function () {
+  	game.state.add("Menu", menu);
+    this.state.start('Menu');
+  }
+
+}
+
 	var menu = function(game){}
      
   menu.prototype = {
 		preload:function(){
-			game.load.image("bird", "newship.png");
-			this.loadingBar = this.add.sprite(100, 100, "newship.png");
+			//game.load.image("why", "pipe.png");
+			this.loadingBar = this.add.sprite(100, 100, "loadingBar");
     	this.load.setPreloadSprite(this.loadingBar);
 
 			game.load.image("bird", "start.png");
@@ -504,7 +522,7 @@ window.onload = function() {
 			game.load.spritesheet("slash", "slice.png", 128, 128, 16);
 			
 			game.load.image("space", "background.png");	 
-			game.load.image("pipe", "pipe.png");
+			//game.load.image("pipe", "pipe.png");
 			game.load.json("bassline", "example.json");	
 			game.load.json("accompaniment", "accompaniment.json");
 			game.load.json("melody", "melody.json");
@@ -552,8 +570,8 @@ window.onload = function() {
 		console.log("load started");
 	}
      
-  game.state.add("Menu",menu);
-  game.state.start("Menu");
+  game.state.add("Boot", boot);
+  game.state.start("Boot");
      
   function showScore(){
   // 	var percent = parseFloat(score / 10);
@@ -598,4 +616,5 @@ window.onload = function() {
  			game.state.add("Play",play);
   		game.state.start("Play");
 	}
+
 }
